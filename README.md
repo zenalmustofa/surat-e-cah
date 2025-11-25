@@ -2,6 +2,10 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![MERN Stack](https://img.shields.io/badge/Stack-MERN-success)
 
+| Nama Lengkap | NRP |
+| :--- | :--- |
+| Zaenal Mustofa | 5027241018 |
+
 **Surat-E Cah** adalah aplikasi web modern yang dirancang untuk mendigitalisasi proses administrasi surat pengantar di tingkat desa/kelurahan. Aplikasi ini memangkas birokrasi manual menjadi sistem yang transparan, cepat, dan *paperless*.
 
 ---
