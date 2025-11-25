@@ -1,4 +1,4 @@
-# 🇮🇩 Surat-E Cah: Sistem Pelayanan Desa Digital
+# 🇮🇩 Surat-E Cah: Sistem Persuratan Desa Digital
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![MERN Stack](https://img.shields.io/badge/Stack-MERN-success)
 
