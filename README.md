@@ -111,4 +111,17 @@ npm start
 -----
 
 ## 📸 Dokumentasi
+### Form Pengajuan
+![Login Page](/src/form.png)
 
+### Setelah Pengajuan Form
+![after form](/src/afterform.png)
+
+### Cek Status
+![Cek Status](/src/cekstatus.png)
+
+### Login Admin
+![Login Admin](/src/loginadmin.png)
+
+### Dashboard Admin
+![Dashboard Admin](/src/dashboardadmin.png)
