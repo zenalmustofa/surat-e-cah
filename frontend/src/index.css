@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-red: #D32F2F; /* Merah Bendera */
+  --dark-red: #B71C1C;    /* Merah Gelap untuk Gradient */
+  --white: #FFFFFF;
+  --bg-gray: #F0F2F5;     /* Abu-abu sedikit lebih terang */
+  --text-dark: #2D3436;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.12); /* Shadow lebih lembut tapi luas */
+  --radius: 16px;         /* Sudut lebih membulat */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-gray);
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden; /* Mencegah scroll samping tak sengaja */
+}
+
+/* --- Layout Classes --- */
+.container {
+  width: 100%;
+  max-width: 1280px; /* Lebar maksimum konten utama diperbesar */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Wrapper Halaman (Form & Content) */
+.page-wrapper {
+  max-width: 900px; /* DIPERBESAR: Dulu 700px, sekarang 900px biar gagah di desktop */
+  margin: 50px auto; /* Jarak atas lebih lega */
+  padding: 0 20px;
+}
+
+.page-wrapper-small {
+  max-width: 600px; /* DIPERBESAR: Dulu 500px */
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* Card Component */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 50px; /* Padding dalam card diperbesar */
+  box-shadow: var(--shadow);
+  border-top: 6px solid var(--primary-red); /* Border merah lebih tebal */
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efek melayang halus saat di-hover */
+  box-shadow: 0 15px 50px rgba(211, 47, 47, 0.15); /* Shadow merah halus */
+}
+
+/* Form Elements */
+.form-group { margin-bottom: 25px; } /* Spasi antar input lebih lega */
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 16px 20px; /* Input lebih "gendut" */
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1.05rem; /* Huruf input sedikit lebih besar */
+  font-family: inherit;
+  background-color: #fcfcfc;
+  transition: all 0.3s;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--primary-red);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1); /* Efek glow merah saat diketik */
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 16px 32px; /* Tombol lebih besar */
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.1rem; /* Teks tombol lebih besar */
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+}
+
+.btn-secondary {
+  background: #e9ecef;
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover { background: #dee2e6; }
+
+.btn-block { width: 100%; }
+
+/* --- Navbar (Merah Brand) --- */
+.navbar {
+  background: linear-gradient(90deg, #9A1B28, #B91C1C);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(154, 27, 40, 0.25);
+}
+
+.nav-container {
+  width: 100%;
+  padding: 0 32px;
+  /* KUNCI PERUBAHAN: Flexbox Space Between */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.nav-logo {
+  color: white;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Container Link Menu (Di Kanan) */
+.nav-links {
+  display: flex;
+  gap: 20px; /* Jarak antar tombol */
+  align-items: center;
+}
+
+.nav-item {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  white-space: nowrap; /* Biar teks gak turun */
+}
+
+.nav-item:hover, .nav-item.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.mobile-menu-icon { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 900px) {
+  .nav-container { padding: 0 20px; }
+  .mobile-menu-icon { display: block; }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #9A1B28; /* Background Merah pas dropdown */
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active { display: flex; animation: fadeIn 0.3s ease; }
+  .nav-item { width: 100%; text-align: center; }
+}
+/* Search Box */
+.search-box { display: flex; gap: 15px; }
+
+/* --- RESPONSIVE BREAKPOINTS (HP & Tablet) --- */
+@media (max-width: 992px) { /* Tablet & Laptop Kecil */
+  .page-wrapper { max-width: 100%; padding: 0 30px; }
+}
+
+@media (max-width: 768px) { /* HP */
+  .navbar { padding: 15px 0; } /* Navbar mengecil sedikit di HP */
+  
+  .mobile-menu-icon { display: block; }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-red);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .nav-links.active { display: flex; animation: fadeIn 0.3s ease; }
+  
+  .page-wrapper, .page-wrapper-small {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .card { padding: 30px 20px; } /* Padding card mengecil di HP biar muat konten */
+  
+  .search-box { flex-direction: column; }
+  
+  .btn { width: 100%; }
+  
+  h2 { font-size: 1.6rem; }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.6s ease-out; }
